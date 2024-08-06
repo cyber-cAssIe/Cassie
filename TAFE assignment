@@ -1,0 +1,59 @@
+print("Press 0 to start")
+start=input(" :")
+while start=='0':
+    print("Welcome to Diamond Realty Time Tracker")
+    print("Please select an option:")
+    print("To log hours press 1")
+    print("To generate report press 2")
+    print("To exit press 3")
+    selection= input(" :")
+    if selection == "3":
+        print("Thank you, have a nice day.")
+        break
+    if selection == "1":
+        employee_name=input("Employee name: ")
+        employee_number=input("Employee number: ")
+        monday= input("Hours worked on Monday: ")
+        tuesday= input("Hours worked on Tuesday: ")
+        wednesday=input("Hours worked on Wednesday: ")
+        thursday=input("Hours worked on Thursday: ")
+        friday=input("Hours worked on Friday: ")
+        input("Thank you, press any key to return home: ")
+
+        hours_worked=[monday,tuesday, wednesday,thursday,friday]
+        employee_details=[employee_name,employee_number]
+        hours_worked_report=(employee_details, hours_worked)
+        monday = float(monday)
+        tuesday = float(tuesday)
+        wednesday = float(wednesday)
+        thursday = float(thursday)
+        friday = float (friday)
+
+    if selection == "2":
+        print(hours_worked_report)
+        print("You worked "+ str(monday+tuesday+wednesday+thursday+friday)+" hours this week.")
+        if (monday<4):
+            print("Insufficient hours worked on Monday")
+        if (monday>10):
+            print("Too many hours worked on Monday")
+        if (tuesday<4):
+            print("Insufficient hours worked on Tuesday")
+        if (tuesday>10):
+            print("Too many hours worked on Tuesday")
+        if (wednesday<4):
+            print("Insufficient hours worked on Wednesday")
+        if (wednesday>10):
+            print("Too many hours worked on Wednesday")
+        if (thursday<4):
+            print("Insufficient hours worked on Thursday")
+        if (thursday>10):
+            print("Too many hours worked on Thursday")
+        if (friday<4):
+            print("Insufficient hours worked on Friday")
+        if (friday>10):
+            print("Too many hours worked on Friday")
+        if monday+tuesday+wednesday+thursday+friday<30:
+            print("You didn't do enough work this week!")
+        if monday+tuesday+wednesday+thursday+friday>40:
+            print("You are working too hard!")
+        input("Press any key to return home: ")
